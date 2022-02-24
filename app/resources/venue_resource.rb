@@ -8,11 +8,10 @@ class VenueResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :likes
+  has_many :likes
 
   # Indirect associations
 
   many_to_many :favorite_dishes,
                resource: DishResource
-
 end

@@ -11,5 +11,4 @@ class UserResource < ApplicationResource
              resource: LikeResource
 
   # Indirect associations
-
 end

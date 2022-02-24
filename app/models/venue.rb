@@ -2,13 +2,13 @@ class Venue < ApplicationRecord
   # Direct associations
 
   has_many   :likes,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
   has_many   :favorite_dishes,
-             :through => :likes,
-             :source => :dish
+             through: :likes,
+             source: :dish
 
   # Validations
 
@@ -17,5 +17,4 @@ class Venue < ApplicationRecord
   def to_s
     name
   end
-
 end
