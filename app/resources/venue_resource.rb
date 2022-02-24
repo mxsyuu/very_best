@@ -12,4 +12,7 @@ class VenueResource < ApplicationResource
 
   # Indirect associations
 
+  many_to_many :favorite_dishes,
+               resource: DishResource
+
 end
