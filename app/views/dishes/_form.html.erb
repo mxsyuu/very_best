@@ -1,7 +1,6 @@
 <% was_validated = dish.errors.any? %>
 
 <%= form_with(model: dish, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for venue_id start -->
   <div class="form-group">
     <% venue_class = "form-control" %>
     <% venue_was_invalid = dish.errors.include?(:venue) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :venue_id %>
-    <!-- Input for venue_id start -->
     <%= f.number_field :venue_id, class: venue_class, placeholder: "Enter venue" %>
-    <!-- Input for venue_id end -->
     <% if venue_was_invalid %>
       <% dish.errors.full_messages_for(:venue).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for venue_id end -->
-  <!-- Label and input for item start -->
   <div class="form-group">
     <% item_class = "form-control" %>
     <% item_was_invalid = dish.errors.include?(:item) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :item %>
-    <!-- Input for item start -->
     <%= f.text_field :item, class: item_class, placeholder: "Enter item" %>
-    <!-- Input for item end -->
     <% if item_was_invalid %>
       <% dish.errors.full_messages_for(:item).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for item end -->
-  <!-- Label and input for cuisine_id start -->
   <div class="form-group">
     <% cuisine_class = "form-control" %>
     <% cuisine_was_invalid = dish.errors.include?(:cuisine) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :cuisine_id %>
-    <!-- Input for cuisine_id start -->
     <%= f.collection_select :cuisine_id, Cuisine.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for cuisine_id end -->
     <% if cuisine_was_invalid %>
       <% dish.errors.full_messages_for(:cuisine).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for cuisine_id end -->
-  <!-- Label and input for description start -->
   <div class="form-group">
     <% description_class = "form-control" %>
     <% description_was_invalid = dish.errors.include?(:description) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :description %>
-    <!-- Input for description start -->
     <%= f.text_area :description, class: description_class, placeholder: "Enter description" %>
-    <!-- Input for description end -->
     <% if description_was_invalid %>
       <% dish.errors.full_messages_for(:description).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,8 +89,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for description end -->
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <% user_class = "form-control" %>
     <% user_was_invalid = dish.errors.include?(:user) %>
@@ -119,9 +102,7 @@
     <% end %>
 
     <%= f.label :user_id %>
-    <!-- Input for user_id start -->
     <%= f.collection_select :user_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for user_id end -->
     <% if user_was_invalid %>
       <% dish.errors.full_messages_for(:user).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -130,6 +111,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
