@@ -1,6 +1,8 @@
 class Dish < ApplicationRecord
   # Direct associations
 
+  belongs_to :cuisine
+
   has_many   :favorite_dishes,
              :class_name => "Like",
              :dependent => :destroy
