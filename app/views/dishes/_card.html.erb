@@ -17,7 +17,11 @@
 
       <dt>Cuisine</dt>
       <!-- Display cuisine_id start -->
-      <dd><%= dish.cuisine_id %></dd>
+      <dd>
+        <% if @dish.cuisine.present? %>
+          <%= link_to dish.cuisine, dish.cuisine %>
+        <% end %>
+      </dd>
       <!-- Display cuisine_id end -->
 
       <dt>Description</dt>
@@ -27,7 +31,11 @@
 
       <dt>User</dt>
       <!-- Display user_id start -->
-      <dd><%= dish.user_id %></dd>
+      <dd>
+        <% if @dish.user.present? %>
+          <%= link_to dish.user, dish.user %>
+        <% end %>
+      </dd>
       <!-- Display user_id end -->
 
     </dl>
