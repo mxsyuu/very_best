@@ -5,6 +5,8 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :dishes
+
   has_many   :favorite_dishes,
              resource: LikeResource
 
