@@ -10,6 +10,8 @@ class DishResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :cuisine
+
   has_many   :favorite_dishes,
              resource: LikeResource
 
