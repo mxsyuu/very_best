@@ -6,6 +6,10 @@ class Venue < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :favorite_dishes,
+             :through => :likes,
+             :source => :dish
+
   # Validations
 
   # Scopes
